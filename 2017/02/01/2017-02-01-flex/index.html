@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="flex是个非常强大的css属性，能用简单的语法实现自适应的弹性布局。 flex-derection：「方向」 flex-direction: row | row-reverse | column | column-reverse  row：从左到右「→」 See the Pen flex-derection: row by raimonfuns (@raimonfuns) on CodePen.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="弹性布局：flex">
+<meta property="og:url" content="http://yoursite.com/2017/02/01/2017-02-01-flex/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="flex是个非常强大的css属性，能用简单的语法实现自适应的弹性布局。 flex-derection：「方向」 flex-direction: row | row-reverse | column | column-reverse  row：从左到右「→」 See the Pen flex-derection: row by raimonfuns (@raimonfuns) on CodePen.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-02-01T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="弹性布局：flex">
+<meta name="twitter:description" content="flex是个非常强大的css属性，能用简单的语法实现自适应的弹性布局。 flex-derection：「方向」 flex-direction: row | row-reverse | column | column-reverse  row：从左到右「→」 See the Pen flex-derection: row by raimonfuns (@raimonfuns) on CodePen.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/01/2017-02-01-flex/"/>
+
+  <title> 弹性布局：flex | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                弹性布局：flex
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-01T23:19:58+08:00" content="2017-02-01">
+              2017-02-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>flex</code>是个非常强大的css属性，能用简单的语法实现自适应的弹性布局。</p>
+<h2 id="flex-derection：「方向」"><a href="#flex-derection：「方向」" class="headerlink" title="flex-derection：「方向」"></a>flex-derection：「方向」</h2><blockquote>
+<p>flex-direction: <u>row</u> | row-reverse | column | column-reverse</p>
+</blockquote>
+<p><code>row：从左到右「→」</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="jyZJLg" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-derection: row" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/jyZJLg/" target="_blank" rel="noopener">flex-derection: row</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>row-reverse：从右到左「←」</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="zNRbRo" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-derection: row-reverse" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/zNRbRo/" target="_blank" rel="noopener">flex-derection: row-reverse</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>column： 从上到下「↓」</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="NdyJyV" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-derection: column" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/NdyJyV/" target="_blank" rel="noopener">flex-derection: column</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>column-reverse：从下到上「↑」</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="MJQxVK" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-derection: column-reverse" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/MJQxVK/" target="_blank" rel="noopener">flex-derection: column-reverse</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="flex-wrap：「换行」"><a href="#flex-wrap：「换行」" class="headerlink" title="flex-wrap：「换行」"></a>flex-wrap：「换行」</h2><blockquote>
+<p>flex-wrap: <u>norwap</u> | wrap | wrap-reverse</p>
+</blockquote>
+<p><code>norwrap：不换行</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="jyZJxO" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-wrap: norwrap" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/jyZJxO/" target="_blank" rel="noopener">flex-wrap: norwrap</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>wrap：换行</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="apqMGW" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-wrap: wrap" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/apqMGW/" target="_blank" rel="noopener">flex-wrap: wrap</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>wrap-reverse：换行+倒序</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="vgdPrr" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-wrap: wrap-reverse" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/vgdPrr/" target="_blank" rel="noopener">flex-wrap: wrap-reverse</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="flex-flow：「方向和换行的缩写」"><a href="#flex-flow：「方向和换行的缩写」" class="headerlink" title="flex-flow：「方向和换行的缩写」"></a>flex-flow：「方向和换行的缩写」</h2><blockquote>
+<p>flex-flow: &lt;’flex-direction’&gt; || &lt;’flex-wrap’&gt;</p>
+</blockquote>
+<p>flex-flow是两个属性的缩写形式，可以同时设置<code>flex-direction</code>和<code>flex-wrap</code>这两个属性</p>
+<p>默认值是<code>initial</code>，表示<code>flex-direction: row</code>和<code>flex-wrap: norwrap</code>。</p>
+<h2 id="order：「顺序」"><a href="#order：「顺序」" class="headerlink" title="order：「顺序」"></a>order：「顺序」</h2><blockquote>
+<ul>
+<li>order: <integer></integer></li>
+<li>initial: 0</li>
+</ul>
+</blockquote>
+<p><code>order</code>是一个相对值，同一行的元素，order的值越小，它的位置就越靠前。</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="xgYBQX" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[flex]order" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/xgYBQX/" target="_blank" rel="noopener">[flex]order</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="flex-basis：「初始宽高」"><a href="#flex-basis：「初始宽高」" class="headerlink" title="flex-basis：「初始宽高」"></a>flex-basis：「初始宽高」</h2><blockquote>
+<ul>
+<li>flex-basis: <u>main_size</u> | <width></width></li>
+<li>设置flex item的初始宽/高</li>
+</ul>
+</blockquote>
+<p>这个属性与后面的flex-grow和flex-shrink有关联，是它们的一个基础。</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="dNdLYg" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-basis" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/dNdLYg/" target="_blank" rel="noopener">flex-basis</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="flex-grow：「分配多余的空间」"><a href="#flex-grow：「分配多余的空间」" class="headerlink" title="flex-grow：「分配多余的空间」"></a>flex-grow：「分配多余的空间」</h2><blockquote>
+<ul>
+<li>flex-grow: <number></number></li>
+<li>initial: 0</li>
+</ul>
+</blockquote>
+<p><strong><code>flex-grow</code>是flex弹性布局中最重要的属性！！！</strong></p>
+<p>把「多余的空间」按比例分配给设置了<code>flex-grow</code>的元素。</p>
+<p>计算公式：flex-basis + flow-grow/sum(flow-grow)*remain（看一下例子就比较容易理解这个公式了）</p>
+<p><code>情景一：一个元素占据剩余空间</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="QdQoej" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-grow-1" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/QdQoej/" target="_blank" rel="noopener">flex-grow-1</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p>情景二：多个元素占据剩余空间</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="JEpVdL" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-grow-2" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/JEpVdL/" target="_blank" rel="noopener">flex-grow-2</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="flex-shrink：「分配超出的空间」"><a href="#flex-shrink：「分配超出的空间」" class="headerlink" title="flex-shrink：「分配超出的空间」"></a>flex-shrink：「分配超出的空间」</h2><blockquote>
+<ul>
+<li>flex-shrink: <number></number></li>
+<li>initial: 1</li>
+</ul>
+</blockquote>
+<p>计算公式：flex-basis + flow-shrink/sum(flow-shrink)*remain</p>
+<p><code>flex-shrink为1，所有做出同样的「牺牲」，一起变小</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="bgLJed" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-shrink" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/bgLJed/" target="_blank" rel="noopener">flex-shrink</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p>flex-shrink不为1，大家「牺牲」的程度不一样</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="qRxwjJ" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-shrink-1" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/qRxwjJ/" target="_blank" rel="noopener">flex-shrink-1</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><blockquote>
+<ul>
+<li>flex: &lt;’flex-grow’&gt; || &lt;’flex-shrink’&gt; || &lt;’flex-basis’&gt;</li>
+<li>initial: 0 1 main-size</li>
+</ul>
+</blockquote>
+<p><code>默认情况：不拉伸</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="OWQGxV" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-1" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/OWQGxV/" target="_blank" rel="noopener">flex-1</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>大家都按相同的比例，占满「多余的空间」</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="mRXgBN" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-2" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/mRXgBN/" target="_blank" rel="noopener">flex-2</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>不同的拉伸比例</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="LxQveM" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-3" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/LxQveM/" target="_blank" rel="noopener">flex-3</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><blockquote>
+<ul>
+<li>justify-content: <u>flex-start</u> | flex-end | center | space-between | space-around</li>
+<li>设置main-axis方向上对齐方式</li>
+</ul>
+</blockquote>
+<p>作用类似于<code>text-center</code></p>
+<p><code>flex-start</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="VPQNQN" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-start" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/VPQNQN/" target="_blank" rel="noopener">flex-start</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>flex-end</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="pRaBKr" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-end" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/pRaBKr/" target="_blank" rel="noopener">flex-end</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>center</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="ZLrZRv" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-center" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/ZLrZRv/" target="_blank" rel="noopener">flex-center</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>flex-between</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="XpZQYq" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-between" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/XpZQYq/" target="_blank" rel="noopener">flex-between</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>flex-around</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="YNeMvo" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="flex-around" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/YNeMvo/" target="_blank" rel="noopener">flex-around</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><blockquote>
+<ul>
+<li>align-items: f<u>lex-start</u> | flex-end | center | baseline | <u>stretch</u></li>
+<li>设置cross-axis方向上对齐方式</li>
+</ul>
+</blockquote>
+<p>作用类似与<code>vertical-align</code></p>
+<p><code>flex-start</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="WRMWgp" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-items]flex-start" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/WRMWgp/" target="_blank" rel="noopener">[align-items]flex-start</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>flex-end</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="vgdMQB" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-items]flex-end" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/vgdMQB/" target="_blank" rel="noopener">[align-items]flex-end</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>center</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="PWQgxZ" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-items]center" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/PWQgxZ/" target="_blank" rel="noopener">[align-items]center</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>baseline</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="JEpVex" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-items]baseline" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/JEpVex/" target="_blank" rel="noopener">[align-items]baseline</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>stretch</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="QdQPJv" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-items]stretch" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/QdQPJv/" target="_blank" rel="noopener">[align-items]stretch</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><blockquote>
+<ul>
+<li>align-self: <u>auto</u> | flex-start | flex-end | center | baseline | stretch</li>
+<li>设置单个flex item在cross-axis方向上对齐方式</li>
+</ul>
+</blockquote>
+<p><code>flex-start</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="oBEKaO" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-selfs]flex-start" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/oBEKaO/" target="_blank" rel="noopener">[align-selfs]flex-start</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>flex-end</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="QdQPog" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-selfs]flex-end" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/QdQPog/" target="_blank" rel="noopener">[align-selfs]flex-end</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>center</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="KaQYYy" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-selfs]center" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/KaQYYy/" target="_blank" rel="noopener">[align-selfs]center</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>baseline</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="zNRXXm" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-selfs]baseline" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/zNRXXm/" target="_blank" rel="noopener">[align-selfs]baseline</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>stretch</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="xgYeeM" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-selfs]stretch" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/xgYeeM/" target="_blank" rel="noopener">[align-selfs]stretch</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><blockquote>
+<ul>
+<li>align-content: flex-start | flex-end | center | space | between | space-around | stretch</li>
+<li>设置cross-axis方向上行对齐方式</li>
+</ul>
+</blockquote>
+<p><code>flex-start</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="ZLrZdR" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-content]flex-start" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/ZLrZdR/" target="_blank" rel="noopener">[align-content]flex-start</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>flex-end</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="ygvWLK" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-content]flex-end" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/ygvWLK/" target="_blank" rel="noopener">[align-content]flex-end</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>center</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="xgYNxe" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-content]center" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/xgYNxe/" target="_blank" rel="noopener">[align-content]center</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>between</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="NdyVPv" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-content]between" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/NdyVPv/" target="_blank" rel="noopener">[align-content]between</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>space-around</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="qRxGEz" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-content]space-around" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/qRxGEz/" target="_blank" rel="noopener">[align-content]space-around</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<p><code>stretch</code></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="vgdwON" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="[align-content]stretch" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/vgdwON/" target="_blank" rel="noopener">[align-content]stretch</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/30/2017-01-30-multi-column-layout/" rel="next" title="布局解决方案之「多列布局」">
+                <i class="fa fa-chevron-left"></i> 布局解决方案之「多列布局」
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/02/2017-02-02-orid/" rel="prev" title="【ORID总结】2/1">
+                【ORID总结】2/1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-derection：「方向」"><span class="nav-number">1.</span> <span class="nav-text">flex-derection：「方向」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-wrap：「换行」"><span class="nav-number">2.</span> <span class="nav-text">flex-wrap：「换行」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-flow：「方向和换行的缩写」"><span class="nav-number">3.</span> <span class="nav-text">flex-flow：「方向和换行的缩写」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order：「顺序」"><span class="nav-number">4.</span> <span class="nav-text">order：「顺序」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-basis：「初始宽高」"><span class="nav-number">5.</span> <span class="nav-text">flex-basis：「初始宽高」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-grow：「分配多余的空间」"><span class="nav-number">6.</span> <span class="nav-text">flex-grow：「分配多余的空间」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-shrink：「分配超出的空间」"><span class="nav-number">7.</span> <span class="nav-text">flex-shrink：「分配超出的空间」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex"><span class="nav-number">8.</span> <span class="nav-text">flex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-content"><span class="nav-number">9.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-items"><span class="nav-number">10.</span> <span class="nav-text">align-items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-self"><span class="nav-number">11.</span> <span class="nav-text">align-self</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-content"><span class="nav-number">12.</span> <span class="nav-text">align-content</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="常见的页面布局有：两列布局，多列布局，等分布局，等高布局，然后再加上一些自适应布局。 定宽 + 自适应 float + marginSee the Pen 两列布局:float + margin by raimonfuns (@raimonfuns) on CodePen.   优点：简单，很容易理解 缺点：IE6有一些bug  float + margin + (fix)See the Pen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="布局解决方案之「多列布局」">
+<meta property="og:url" content="http://yoursite.com/2017/01/30/2017-01-30-multi-column-layout/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="常见的页面布局有：两列布局，多列布局，等分布局，等高布局，然后再加上一些自适应布局。 定宽 + 自适应 float + marginSee the Pen 两列布局:float + margin by raimonfuns (@raimonfuns) on CodePen.   优点：简单，很容易理解 缺点：IE6有一些bug  float + margin + (fix)See the Pen">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/bpt48.png">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/ywv4h.png">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/9k6nz.png">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/1cii7.png">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/4qwxe.png">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/pf76c.png">
+<meta property="og:image" content="http://oggx6lf7f.bkt.clouddn.com/rbeh5.png">
+<meta property="og:updated_time" content="2017-01-30T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="布局解决方案之「多列布局」">
+<meta name="twitter:description" content="常见的页面布局有：两列布局，多列布局，等分布局，等高布局，然后再加上一些自适应布局。 定宽 + 自适应 float + marginSee the Pen 两列布局:float + margin by raimonfuns (@raimonfuns) on CodePen.   优点：简单，很容易理解 缺点：IE6有一些bug  float + margin + (fix)See the Pen">
+<meta name="twitter:image" content="http://oggx6lf7f.bkt.clouddn.com/bpt48.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/30/2017-01-30-multi-column-layout/"/>
+
+  <title> 布局解决方案之「多列布局」 | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                布局解决方案之「多列布局」
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-30T23:19:58+08:00" content="2017-01-30">
+              2017-01-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>常见的页面布局有：两列布局，多列布局，等分布局，等高布局，然后再加上一些自适应布局。</p>
+<h2 id="定宽-自适应"><a href="#定宽-自适应" class="headerlink" title="定宽 + 自适应"></a>定宽 + 自适应</h2><p><img src="http://oggx6lf7f.bkt.clouddn.com/bpt48.png" alt=""></p>
+<h3 id="float-margin"><a href="#float-margin" class="headerlink" title="float + margin"></a>float + margin</h3><p data-height="265" data-theme-id="0" data-slug-hash="LxexrB" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="两列布局:float + margin" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/LxexrB/" target="_blank" rel="noopener">两列布局:float + margin</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：简单，很容易理解</li>
+<li>缺点：IE6有一些bug</li>
+</ul>
+<h3 id="float-margin-fix"><a href="#float-margin-fix" class="headerlink" title="float + margin + (fix)"></a>float + margin + (fix)</h3><p data-height="265" data-theme-id="0" data-slug-hash="MJrJLo" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="两列布局:float + margin + (fix)" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/MJrJLo/" target="_blank" rel="noopener">两列布局:float + margin + (fix)</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：简单，很容易理解，不存在兼容性问题</li>
+<li>缺点：1. 你试着选中left的文案就会发现，left的文案无法被选中，因为left被right遮住，解决方法是用<code>position: relative</code>提高left的层级。</li>
+</ul>
+<h3 id="float-overflow"><a href="#float-overflow" class="headerlink" title="float + overflow"></a>float + overflow</h3><p data-height="265" data-theme-id="0" data-slug-hash="jyYyoy" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="两列布局:float + overflow" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/jyYyoy/" target="_blank" rel="noopener">两列布局:float + overflow</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：写法简单</li>
+</ul>
+<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><p data-height="265" data-theme-id="0" data-slug-hash="vgpgqw" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="两列布局:table" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/vgpgqw/" target="_blank" rel="noopener">两列布局:table</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>缺点：不能设置margin，只能设置padding，代码比较多。</li>
+</ul>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p data-height="265" data-theme-id="0" data-slug-hash="LxeWPM" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="两列布局:flex" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/LxeWPM/" target="_blank" rel="noopener">两列布局:flex</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：功能强大！代码少</li>
+<li>缺点：内部标签太多的话会有性能问题，所以只能用来做小范围的布局。</li>
+</ul>
+<h2 id="定宽-定宽-自适应"><a href="#定宽-定宽-自适应" class="headerlink" title="定宽 + 定宽 + 自适应"></a>定宽 + 定宽 + 自适应</h2><p><img src="http://oggx6lf7f.bkt.clouddn.com/ywv4h.png" alt=""></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="ggompp" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="多列布局" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/ggompp/" target="_blank" rel="noopener">多列布局</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="不定宽-自适应"><a href="#不定宽-自适应" class="headerlink" title="不定宽 + 自适应"></a>不定宽 + 自适应</h2><p><img src="http://oggx6lf7f.bkt.clouddn.com/9k6nz.png" alt=""></p>
+<h3 id="float-overflow-1"><a href="#float-overflow-1" class="headerlink" title="float + overflow"></a>float + overflow</h3><p data-height="265" data-theme-id="0" data-slug-hash="WRdprR" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="【不定宽 + 自适应】float + overflow" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/WRdprR/" target="_blank" rel="noopener">【不定宽 + 自适应】float + overflow</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h3 id="table-1"><a href="#table-1" class="headerlink" title="table"></a>table</h3><p data-height="265" data-theme-id="0" data-slug-hash="WRdpGp" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="【不定宽 + 自适应】table" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/WRdpGp/" target="_blank" rel="noopener">【不定宽 + 自适应】table</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h3 id="flex-1"><a href="#flex-1" class="headerlink" title="flex"></a>flex</h3><p data-height="265" data-theme-id="0" data-slug-hash="apEJBQ" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="【不定宽 + 自适应】flex" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/apEJBQ/" target="_blank" rel="noopener">【不定宽 + 自适应】flex</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="不定宽-不定宽-自适应"><a href="#不定宽-不定宽-自适应" class="headerlink" title="不定宽 + 不定宽 + 自适应"></a>不定宽 + 不定宽 + 自适应</h2><p><img src="http://oggx6lf7f.bkt.clouddn.com/1cii7.png" alt=""></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="rjpyyr" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="【多列布局 + 自适应】" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/rjpyyr/" target="_blank" rel="noopener">【多列布局 + 自适应】</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h2 id="等分布局"><a href="#等分布局" class="headerlink" title="等分布局"></a>等分布局</h2><p><img src="http://oggx6lf7f.bkt.clouddn.com/4qwxe.png" alt=""></p>
+<p><img src="http://oggx6lf7f.bkt.clouddn.com/pf76c.png" alt=""></p>
+<h3 id="float"><a href="#float" class="headerlink" title="float"></a>float</h3><p data-height="265" data-theme-id="0" data-slug-hash="ygpMbv" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="等分布局: float" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/ygpMbv/" target="_blank" rel="noopener">等分布局: float</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：高级浏览器全兼容</li>
+<li>缺点：列数和百分比高度百分比耦合性太高，也就是说一旦列数改变，宽度百分比就得有相应的改变。</li>
+</ul>
+<h4 id="table-2"><a href="#table-2" class="headerlink" title="table"></a>table</h4><p data-height="265" data-theme-id="0" data-slug-hash="qRpmbO" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="等分布局: table" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/qRpmbO/" target="_blank" rel="noopener">等分布局: table</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：结构和样式彻底解耦，因为table加了<code>table-layout: fixed</code>会自动平分所有单元格</li>
+<li>缺点：加了一层标签</li>
+</ul>
+<h3 id="flex-2"><a href="#flex-2" class="headerlink" title="flex"></a>flex</h3><p data-height="265" data-theme-id="0" data-slug-hash="PWEmWE" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="等分布局: flex" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/PWEmWE/" target="_blank" rel="noopener">等分布局: flex</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<ul>
+<li>优点：代码简洁。结构和样式彻底解耦，因为table加了<code>table-layout: fixed</code>会自动平分所有单元格。</li>
+<li>缺点：兼容性问题</li>
+</ul>
+<h2 id="等高布局"><a href="#等高布局" class="headerlink" title="等高布局"></a>等高布局</h2><p><img src="http://oggx6lf7f.bkt.clouddn.com/rbeh5.png" alt=""></p>
+<h3 id="table-3"><a href="#table-3" class="headerlink" title="table"></a>table</h3><p data-height="265" data-theme-id="0" data-slug-hash="YNYVVV" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="等高布局:table" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/YNYVVV/" target="_blank" rel="noopener">等高布局:table</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<h3 id="flex-3"><a href="#flex-3" class="headerlink" title="flex"></a>flex</h3><p data-height="265" data-theme-id="0" data-slug-hash="MJrmvd" data-default-tab="css,result" data-user="raimonfuns" data-embed-version="2" data-pen-title="等高布局:flex" class="codepen">See the Pen <a href="http://codepen.io/raimonfuns/pen/MJrmvd/" target="_blank" rel="noopener">等高布局:flex</a> by raimonfuns (<a href="http://codepen.io/raimonfuns" target="_blank" rel="noopener">@raimonfuns</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上是网站最常用，最高频的布局方式，把这些学会，并且记住，多练习，以后再遇到类似的布局时，就能信手拈来，快速地把页面写出来！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/30/2017-01-30-fullscreen-layout/" rel="next" title="布局解决方案之「全屏布局」">
+                <i class="fa fa-chevron-left"></i> 布局解决方案之「全屏布局」
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/01/2017-02-01-flex/" rel="prev" title="弹性布局：flex">
+                弹性布局：flex <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定宽-自适应"><span class="nav-number">1.</span> <span class="nav-text">定宽 + 自适应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#float-margin"><span class="nav-number">1.1.</span> <span class="nav-text">float + margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float-margin-fix"><span class="nav-number">1.2.</span> <span class="nav-text">float + margin + (fix)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float-overflow"><span class="nav-number">1.3.</span> <span class="nav-text">float + overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table"><span class="nav-number">1.4.</span> <span class="nav-text">table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex"><span class="nav-number">1.5.</span> <span class="nav-text">flex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定宽-定宽-自适应"><span class="nav-number">2.</span> <span class="nav-text">定宽 + 定宽 + 自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定宽-自适应"><span class="nav-number">3.</span> <span class="nav-text">不定宽 + 自适应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#float-overflow-1"><span class="nav-number">3.1.</span> <span class="nav-text">float + overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table-1"><span class="nav-number">3.2.</span> <span class="nav-text">table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-1"><span class="nav-number">3.3.</span> <span class="nav-text">flex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定宽-不定宽-自适应"><span class="nav-number">4.</span> <span class="nav-text">不定宽 + 不定宽 + 自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等分布局"><span class="nav-number">5.</span> <span class="nav-text">等分布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#float"><span class="nav-number">5.1.</span> <span class="nav-text">float</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#table-2"><span class="nav-number">5.1.1.</span> <span class="nav-text">table</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-2"><span class="nav-number">5.2.</span> <span class="nav-text">flex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等高布局"><span class="nav-number">6.</span> <span class="nav-text">等高布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#table-3"><span class="nav-number">6.1.</span> <span class="nav-text">table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-3"><span class="nav-number">6.2.</span> <span class="nav-text">flex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

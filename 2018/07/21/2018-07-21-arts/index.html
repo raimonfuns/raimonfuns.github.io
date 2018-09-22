@@ -1,0 +1,671 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="AlgorithmProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may no">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS 3">
+<meta property="og:url" content="http://yoursite.com/2018/07/21/2018-07-21-arts/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="AlgorithmProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may no">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p2mvd0t5x.bkt.clouddn.com/blog/9y4d9.jpg">
+<meta property="og:updated_time" content="2018-07-21T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS 3">
+<meta name="twitter:description" content="AlgorithmProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may no">
+<meta name="twitter:image" content="http://p2mvd0t5x.bkt.clouddn.com/blog/9y4d9.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/21/2018-07-21-arts/"/>
+
+  <title> ARTS 3 | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ARTS 3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-07-21T23:19:58+08:00" content="2018-07-21">
+              2018-07-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ARTS/" itemprop="url" rel="index">
+                    <span itemprop="name">ARTS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have <strong>exactly</strong> one solution, and you may not use the <em>same</em> element twice.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line">return [0, 1].</span><br></pre></td></tr></table></figure>
+<p>我拿到题目之后，第一时间想到的解决方法就是用两个循环遍历。如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> twoSum1 = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = nums.length; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">      count++;</span><br><span class="line">      <span class="keyword">if</span> (nums[i] + nums[j] === target) &#123;</span><br><span class="line">        <span class="keyword">return</span> [i, j];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> [];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>结果正确了，但没有通过 Leetcode 的测试，因为执行花费的时间太久了。于是我看了别人的做法，发现有一个方法，可以执行地更快。如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> twoSum2 = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> cache = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = nums.length; i &lt; len; i++) &#123;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="keyword">const</span> tmp = target - nums[i];</span><br><span class="line">    <span class="keyword">if</span> (cache[tmp] !== <span class="literal">undefined</span>) <span class="keyword">return</span> [cache[tmp], i];</span><br><span class="line">    cache[nums[i]] = i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于这个方法，我有一个例子，可以和现实生活的场景对应起来理解。</p>
+<blockquote>
+<p>小红和小明在网上预定了一家餐厅的座位。他们两个约定在中午12点去那里吃饭。在去吃饭的路上，小红的手机没电了，他们两个没办法联系上。于是他们不知道谁会先到。假设小红先到了，他会跟那个服务员说，我们预定了一个位置，请问那个人来了吗？如果小明还没来，那个服务员就会让小红提供手机号码或者姓名。确认这个座位就是他们两个定的。确认完之后，小红就可以先进去餐厅的座位上等小明。等小明来了之后，他也会去问那个服务员：我们预定了一个位置，请问那个人来了吗？服务员说有一个人已经来了，在里面等你。也就是说先到的人会去服务员那里登记，那么先去座位上等待另外一个人的到来。</p>
+</blockquote>
+<p>在这个例子中，小红和小明就是我们要找的一对数字，服务员就是缓存 cache，记录是否已经有人先到了。</p>
+<p>好，我们再对比一下性能。我写了一个直观的例子：</p>
+<p><img src="http://p2mvd0t5x.bkt.clouddn.com/blog/9y4d9.jpg" alt="image-20180721154313344"></p>
+<p>因为第一种算法复杂度是 n^2，所以在这个例子中，它的运行次数是 105 次。</p>
+<p>第二种算法的复杂度是 n，所以在这个例子中，它的运行次数只有 15 次。</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p><a href="https://dev.to/_bigblind/lay-out-your-code-like-youd-lay-out-your-house-hco" target="_blank" rel="noopener">Lay Out Your Code Like You’d Lay Out Your House</a></p>
+<p>这篇文章的观点是：<strong>我们不应该根据文件的类型（nature）来划分代码，而是应该根据功能（domain）</strong>。</p>
+<p>根据文件类型来划分代码，最经典的模型就是 MVC，Model 放在一个文件夹，View 放在一个文件夹，Controller 放在一个文件夹。坏处就是大部分情况下，当你需要改一个功能的时候，你需要打开 3 个文件夹，修改 3 份会文件。</p>
+<p><a href="https://marmelab.com/blog/2015/12/17/react-directory-structure.html" target="_blank" rel="noopener">A Better File Structure For React/Redux Applications</a> 这篇文章中提到，React 和 Redux 的官方例子，都是根据文件类型来划分的。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">actions/</span><br><span class="line">    CommandActions.js</span><br><span class="line">    UserActions.js</span><br><span class="line">components/</span><br><span class="line">    Header.js</span><br><span class="line">    Sidebar.js</span><br><span class="line">    Command.js</span><br><span class="line">    CommandList.js</span><br><span class="line">    CommandItem.js</span><br><span class="line">    CommandHelper.js</span><br><span class="line">    User.js</span><br><span class="line">    UserProfile.js</span><br><span class="line">    UserAvatar.js</span><br><span class="line">containers/</span><br><span class="line">    App.js</span><br><span class="line">    Command.js</span><br><span class="line">    User.js</span><br><span class="line">reducers/</span><br><span class="line">    index.js</span><br><span class="line">    command.js</span><br><span class="line">    user.js</span><br><span class="line">routes.js</span><br></pre></td></tr></table></figure>
+<p>当你加一个 product 功能的时候，你需要在好几个文件夹之间来回穿梭，你最终的改动如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">actions/</span><br><span class="line">    CommandActions.js</span><br><span class="line">    ProductActions.js   &lt;= Here</span><br><span class="line">    UserActions.js</span><br><span class="line">components/</span><br><span class="line">    Header.js</span><br><span class="line">    Sidebar.js</span><br><span class="line">    Command.js</span><br><span class="line">    CommandList.js</span><br><span class="line">    CommandItem.js</span><br><span class="line">    CommandHelper.js</span><br><span class="line">    Product.js          &lt;= Here</span><br><span class="line">    ProductList.js      &lt;= Here</span><br><span class="line">    ProductItem.js      &lt;= Here</span><br><span class="line">    ProductImage.js     &lt;= Here</span><br><span class="line">    User.js</span><br><span class="line">    UserProfile.js</span><br><span class="line">    UserAvatar.js</span><br><span class="line">containers/</span><br><span class="line">    App.js</span><br><span class="line">    Command.js</span><br><span class="line">    Product.js          &lt;= Here</span><br><span class="line">    User.js</span><br><span class="line">reducers/</span><br><span class="line">    index.js</span><br><span class="line">    foo.js</span><br><span class="line">    bar.js</span><br><span class="line">    product.js          &lt;= Here</span><br><span class="line">routes.js</span><br></pre></td></tr></table></figure>
+<p>由此可见，按照功能划分代码的好处在于：</p>
+<ol>
+<li>快速定位。我能快速找到某个 feature 所有的代码。当我想要替换一个函数名的时候，我不需要用搜索整个项目。只需要把这个文件夹下的文件都改好就行。</li>
+<li>更加模块化（modular）。一个组件所有的东西都在一个文件夹里面，它能够作为一个模块被复用。</li>
+</ol>
+<h2 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h2><h3 id="如何从文件结构的角度出发，封装好一个组件？"><a href="#如何从文件结构的角度出发，封装好一个组件？" class="headerlink" title="如何从文件结构的角度出发，封装好一个组件？"></a>如何从文件结构的角度出发，封装好一个组件？</h3><p>原则如下：</p>
+<ol>
+<li>根据 feature 来区分代码，每个 feature 单独一个文件夹，便于快速定位代码在哪里。</li>
+<li>组件里面的文件要扁平化，便于查找。</li>
+<li>命名要清晰、有意义，便于识别。</li>
+</ol>
+<p>假如你用 React + Redux，你的组件结构应该是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">product/</span><br><span class="line">    Product.js</span><br><span class="line">    ProductActions.js</span><br><span class="line">    ProductList.js</span><br><span class="line">    ProductItem.js</span><br><span class="line">    ProductImage.js</span><br><span class="line">    productReducer.js</span><br></pre></td></tr></table></figure>
+<p>假如你用 Angular，你的组件接口应该是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">heros/</span><br><span class="line">	heroes.component.ts|html|css|spec.ts</span><br><span class="line">	heroes.module.ts</span><br><span class="line">	heroes-routing.module.ts</span><br></pre></td></tr></table></figure>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><h3 id="凡是多问一个为什么？"><a href="#凡是多问一个为什么？" class="headerlink" title="凡是多问一个为什么？"></a>凡是多问一个为什么？</h3><p>一个人说我觉得xx东西不好。</p>
+<p>一篇文章说不应该做xx。</p>
+<p>一本书说xx是如何如何。</p>
+<p>这些都是观点，是结论。很多人只看结论，不探究结论的合理性，没有问自己为什么是这样，为什么会那样。在聊天的时候，也有人常常引用他人的话来论证他的观点，这种论据其实一点说服力都没有。因为拿一个没有经过证明的论据，去证明一个论点，显然是不成立的。</p>
+<p>学一个技术也是如此。很多人说 xx 技术是 best pratice。那么，这些技术为什么是最佳实践，它解决了什么问题，它的好处是什么？这些我们都应该、也必须去探究一下。尽管这会很累。</p>
+<p>如果要学得有深度，一定要学会持续发问。每次都敷衍了事，这是自欺欺人。在面试的时候，问题都会暴露地一清二楚。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/15/2018-07-15-arts/" rel="next" title="ARTS 2">
+                <i class="fa fa-chevron-left"></i> ARTS 2
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/28/2018-07-28-arts/" rel="prev" title="ARTS 4">
+                ARTS 4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">Problem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Technique"><span class="nav-number">3.</span> <span class="nav-text">Technique</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何从文件结构的角度出发，封装好一个组件？"><span class="nav-number">3.1.</span> <span class="nav-text">如何从文件结构的角度出发，封装好一个组件？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Share"><span class="nav-number">4.</span> <span class="nav-text">Share</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凡是多问一个为什么？"><span class="nav-number">4.1.</span> <span class="nav-text">凡是多问一个为什么？</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

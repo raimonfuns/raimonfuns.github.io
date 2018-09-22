@@ -1,0 +1,676 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="用户故事," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Objective 《招聘网站》第一遍（复制粘贴）  Reflective 照着教程，复制粘贴，快速实现《招聘网站》，有点小成就感。 中午闲着没事，到slack上面帮一个同学解决问题，我开始尝试主动地帮助别人，这很好，继续保持。  Interpretive昨天学到最有价值的概念是提取练习，在昨天的日记]中有提到这个方法。在知道了这个方法的重要性之后，还有更重要的一步要做，那就是践行。其实写ORID">
+<meta name="keywords" content="用户故事">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ORID总结】1&#x2F;4">
+<meta property="og:url" content="http://yoursite.com/2017/01/04/2017-01-04-coding-diary/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="Objective 《招聘网站》第一遍（复制粘贴）  Reflective 照着教程，复制粘贴，快速实现《招聘网站》，有点小成就感。 中午闲着没事，到slack上面帮一个同学解决问题，我开始尝试主动地帮助别人，这很好，继续保持。  Interpretive昨天学到最有价值的概念是提取练习，在昨天的日记]中有提到这个方法。在知道了这个方法的重要性之后，还有更重要的一步要做，那就是践行。其实写ORID">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-01-04T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【ORID总结】1&#x2F;4">
+<meta name="twitter:description" content="Objective 《招聘网站》第一遍（复制粘贴）  Reflective 照着教程，复制粘贴，快速实现《招聘网站》，有点小成就感。 中午闲着没事，到slack上面帮一个同学解决问题，我开始尝试主动地帮助别人，这很好，继续保持。  Interpretive昨天学到最有价值的概念是提取练习，在昨天的日记]中有提到这个方法。在知道了这个方法的重要性之后，还有更重要的一步要做，那就是践行。其实写ORID">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/04/2017-01-04-coding-diary/"/>
+
+  <title> 【ORID总结】1/4 | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                【ORID总结】1/4
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-04T23:19:58+08:00" content="2017-01-04">
+              2017-01-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/全栈营/" itemprop="url" rel="index">
+                    <span itemprop="name">全栈营</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><ul>
+<li>《招聘网站》第一遍（复制粘贴）</li>
+</ul>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><ul>
+<li>照着教程，复制粘贴，快速实现《招聘网站》，有点小成就感。</li>
+<li>中午闲着没事，到slack上面帮一个同学解决问题，我开始尝试主动地帮助别人，这很好，继续保持。</li>
+</ul>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><p>昨天学到最有价值的概念是<strong>提取练习</strong>，在昨天的日记]中有提到这个方法。在知道了这个方法的重要性之后，还有更重要的一步要做，那就是践行。其实写ORID日记这件事本身就是很好的提取练习，当我意识到这一点之后，写文章更加有动力了。</p>
+<h3 id="任务优先级"><a href="#任务优先级" class="headerlink" title="任务优先级"></a>任务优先级</h3><p>先说说接触到这个概念之后，很多人（包括我）平时在做一个项目之前，会在事先对需求进行评估与规划，大概的是这个样子：</p>
+<ul>
+<li>A功能肯定要有的；</li>
+<li>B功能也不错，必须要有；</li>
+<li>C功能看起来也不错呀，加上加上；</li>
+<li>某某公司实现了D功能，效果不错呀，加上加上；</li>
+<li>…</li>
+</ul>
+<p>这样做表面上看起来没有什么问题，但其实有一个很重要的点没有考虑到，那就是<strong>任务的优先级</strong>。</p>
+<p>根据任务的优先级，可以把需求分为4种：</p>
+<ul>
+<li>Must have（必须有）</li>
+<li>Should have（应该有）</li>
+<li>Could have（可以有）</li>
+<li>Nice to have（有的话最好了，没有也无伤大雅）</li>
+</ul>
+<p>在上面提到的例子中，其实是把所有的需求都当作Must have，也就是必须做，但仔细想想，一个初期的产品肯定不是所有的功能都非做不可的。</p>
+<p>举个生活中的例子，当你早上起床到公司上班的这个过程中，要做的事情有洗漱、穿衣、拿手机、拿钥匙，吃早餐、坐车等等。在这些事情当中，吃早餐是Should have，也就是应该吃，但如果偶尔不想吃，其实影响不大，对吧，而其他的事情就是Must have，不做肯定是不行的。</p>
+<p>所以，在一开始也就是在做最小可行性产品的时候，需要着重考虑的需求是：Must和Should。不然的话就后面就一发不可收拾了。</p>
+<p>在实际工作中，很多人程序员都会有遇到这种情况：正在做一个需求，中途冒出来很多小需求，怎么办？很多人可能会停下手中的活，然后去做这些小需求，想着把这些小需求做完，再回来做原先的需求，但事情往往不是按照我们想的那样进行的，后面还会不断地有新的想法冒出来，如果脑子里面没有优先级的概念，那就会想当然地认为每个任务都很重要，所以想法跳出来一个，就换一个，再跳出来一个，就再换一个，如此反复，<strong>需求永远做不完，越做越多，产品永远都无法上线</strong>。</p>
+<p>正确的姿势是当一个中途冒出来一个想法时，先记录下来，然后忽略它，等把手头的事情都做完之后，再<strong>根据上面4个优先级，觉得要不要做这个需求，如果是Must或者Should，才可以把需求列入后续计划中</strong>。</p>
+<p>由此得到：</p>
+<blockquote>
+<p>在刚开始做一个产品时，也就是打算做一个最小可行性产品时，对所有的需求按照4个优先级进行评估，然后<strong>只做Must或者Should的功能</strong>，不要添加太多无畏的个人想法，因为这些想法很可能只是开发者自己希望有的，而不是用户真正需要的。当用户只是需要一辆汽车时，造一辆飞机出来显然是错误的，也是注定失败的。</p>
+</blockquote>
+<h3 id="User-Story（用户故事）"><a href="#User-Story（用户故事）" class="headerlink" title="User Story（用户故事）"></a>User Story（用户故事）</h3><p>User Story就是把自己为某个角色，然后去做某事，以完成某商业价值。</p>
+<p>在一个招聘系统中，有两种角色</p>
+<ul>
+<li>身为管理员，可以发布职位，以达到招募人才的目的。</li>
+<li>身为应聘者，可以筛选职位，以达到获得自己心仪薪水的职位。</li>
+</ul>
+<p>使用User Story整理需求有什么好处？从用户的角度出发，把目光聚焦在各个角色的关键功能上（Must &amp; Should的需求）。</p>
+<blockquote>
+<p>“角色”正是系统复杂度的关键。</p>
+</blockquote>
+<p>在做一个系统之前，首先应该搞清楚这个系统里面有多少个角色，某些角色能不能削减，因为通常来说，每增加一个角色，系统的复杂度就会上一个“次方”，所以必须谨慎考虑。</p>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><p>《招聘系统》第二遍（手敲）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/用户故事/" rel="tag">#用户故事</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/04/2017-01-04-unkown-format/" rel="next" title="【错误】UnknownFormat">
+                <i class="fa fa-chevron-left"></i> 【错误】UnknownFormat
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/05/2017-01-05-coding-diary/" rel="prev" title="【ORID总结】1/5">
+                【ORID总结】1/5 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective"><span class="nav-number">1.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflective"><span class="nav-number">2.</span> <span class="nav-text">Reflective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretive"><span class="nav-number">3.</span> <span class="nav-text">Interpretive</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务优先级"><span class="nav-number">3.1.</span> <span class="nav-text">任务优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-Story（用户故事）"><span class="nav-number">3.2.</span> <span class="nav-text">User Story（用户故事）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decisional"><span class="nav-number">4.</span> <span class="nav-text">Decisional</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

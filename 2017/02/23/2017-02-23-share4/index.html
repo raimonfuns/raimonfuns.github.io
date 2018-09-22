@@ -1,0 +1,660 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言目前，「小小食杂铺」的前端页面基本开发完毕，我打算写一个系列教程，帮助大家掌握css，写出自己想要的页面效果。我会分享如何一步一步做出「小小食杂铺」的前端页面。由于很多同学没有css基础，所以，我不会提及太多术语，尽量用浅显易懂的词语来描述。希望能对大家有帮助，开始吧。 目标实现navbar导航栏  步骤step1：贴上html代码12345678910111213141516&amp;lt;div">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「一步一步做出小小食杂铺」前端分享系列1 — navbar导航栏">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/2017-02-23-share4/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="前言目前，「小小食杂铺」的前端页面基本开发完毕，我打算写一个系列教程，帮助大家掌握css，写出自己想要的页面效果。我会分享如何一步一步做出「小小食杂铺」的前端页面。由于很多同学没有css基础，所以，我不会提及太多术语，尽量用浅显易懂的词语来描述。希望能对大家有帮助，开始吧。 目标实现navbar导航栏  步骤step1：贴上html代码12345678910111213141516&amp;lt;div">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcly1fcuwd7jnstj30zp00z3ye.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fcuxczh7u4j305z01rglj.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcly1fcuwiolppfj30hk09zglk.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcly1fcuwt90ovwj30z902t0so.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcly1fcuwveiqlqj30yu01z0sn.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcly1fcux3kajaaj30xy00zt8l.jpg">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcly1fcux4shoufj30y200ymx2.jpg">
+<meta property="og:updated_time" content="2017-02-23T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「一步一步做出小小食杂铺」前端分享系列1 — navbar导航栏">
+<meta name="twitter:description" content="前言目前，「小小食杂铺」的前端页面基本开发完毕，我打算写一个系列教程，帮助大家掌握css，写出自己想要的页面效果。我会分享如何一步一步做出「小小食杂铺」的前端页面。由于很多同学没有css基础，所以，我不会提及太多术语，尽量用浅显易懂的词语来描述。希望能对大家有帮助，开始吧。 目标实现navbar导航栏  步骤step1：贴上html代码12345678910111213141516&amp;lt;div">
+<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006tKfTcly1fcuwd7jnstj30zp00z3ye.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/23/2017-02-23-share4/"/>
+
+  <title> 「一步一步做出小小食杂铺」前端分享系列1 — navbar导航栏 | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                「一步一步做出小小食杂铺」前端分享系列1 — navbar导航栏
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-23T23:19:58+08:00" content="2017-02-23">
+              2017-02-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/全栈营/" itemprop="url" rel="index">
+                    <span itemprop="name">全栈营</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前，「小小食杂铺」的前端页面基本开发完毕，我打算写一个系列教程，帮助大家掌握css，写出自己想要的页面效果。我会分享如何一步一步做出「小小食杂铺」的前端页面。由于很多同学没有css基础，所以，我不会提及太多术语，尽量用浅显易懂的词语来描述。希望能对大家有帮助，开始吧。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>实现navbar导航栏</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcuwd7jnstj30zp00z3ye.jpg" alt=""></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="step1：贴上html代码"><a href="#step1：贴上html代码" class="headerlink" title="step1：贴上html代码"></a>step1：贴上html代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-wrap"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"shop_navbar"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"shop_navbar-left"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>欢迎来到小小食杂铺！<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"shop_navbar-list"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"shop_navbar-listItem"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"shop_navbar-spacer"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"shop_navbar-listItem"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>登入<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>实例代码我已经帮你备好了，来这里：<a href="http://codepen.io/raimonfuns/pen/rjgZGL" target="_blank" rel="noopener">http://codepen.io/raimonfuns/pen/rjgZGL</a></p>
+<p>可以看到，页面上的内容完全没有见过美化，相当丑陋，就好比一个没有装修过的房子。</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcuxczh7u4j305z01rglj.jpg" alt=""></p>
+<p>接下来我们开始给「房子」上漆。</p>
+<p>后面的步骤，大家可以在css区域跟着贴代码。</p>
+<p>go！</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fcuwiolppfj30hk09zglk.jpg" alt=""></p>
+<h3 id="step2：写css代码"><a href="#step2：写css代码" class="headerlink" title="step2：写css代码"></a>step2：写css代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.navbar-wrap</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#F5F5F5</span>; <span class="comment">/*背景颜色*/</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>; <span class="comment">/*字体12px*/</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>; <span class="comment">/*设置高度*/</span></span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>; <span class="comment">/*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#717171</span>; <span class="comment">/*字体颜色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>cmd + s</code>保存，看效果</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fcuwt90ovwj30z902t0so.jpg" alt=""></p>
+<p>可以看到，navbar背景颜色已经显现出来了。接着来</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.shop_navbar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1200px</span>; <span class="comment">/*设置导航栏宽度1200*/</span></span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto; <span class="comment">/*水平居中*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.shop_navbar-left</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left; <span class="comment">/*你去左边*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.shop_navbar-list</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: right; <span class="comment">/*你去右边*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fcuwveiqlqj30yu01z0sn.jpg" alt=""></p>
+<p>导航栏居中，左右两边的位置都搞定了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.shop_navbar-listItem</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left; <span class="comment">/*「li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float」*/</span></span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>; <span class="comment">/*左边加点空间，不然太挤啦*/</span></span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">10px</span>; <span class="comment">/*右边加点空间，不然太挤啦*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.shop_navbar-spacer</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left; <span class="comment">/*同样的，你也要float*/</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>; <span class="comment">/*宽度为1，就可以拿到当分隔符用了，哈哈*/</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">12px</span>; <span class="comment">/*12px差不多，刚刚好*/</span></span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">9px</span>; <span class="comment">/*调一下上边距*/</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ddd</span>; <span class="comment">/*分隔符的背景颜色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fcux3kajaaj30xy00zt8l.jpg" alt=""></p>
+<p>ok，几乎快完成了哈</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.navbar-wrap</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#717171</span>; <span class="comment">/*文字的颜色*/</span></span><br><span class="line">  <span class="attribute">text-decoration</span>: none; <span class="comment">/*不要下划线啦，好丑*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.navbar-wrap</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#C81623</span>; <span class="comment">/*鼠标一上去的时候，字体变成红色*/</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcux4shoufj30y200ymx2.jpg" alt=""></p>
+<p>done！</p>
+<p>最终代码示例：<a href="http://codepen.io/raimonfuns/pen/qRGMPX" target="_blank" rel="noopener">http://codepen.io/raimonfuns/pen/qRGMPX</a></p>
+<p>未完待续，敬请期待。如果你有什么建议，欢迎留言！</p>
+<hr>
+<p>ps：如果教程对大家有帮助的话，希望能为「<a href="https://fullstack.xinshengdaxue.com/works/201" target="_blank" rel="noopener">小小食杂铺</a>」投上一票哈。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/23/2017-02-23-share2/" rel="next" title="页面布局的高频小套路">
+                <i class="fa fa-chevron-left"></i> 页面布局的高频小套路
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/23/2017-02-23-share3/" rel="prev" title="用jQuery实现常见的js效果">
+                用jQuery实现常见的js效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">2.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step1：贴上html代码"><span class="nav-number">3.1.</span> <span class="nav-text">step1：贴上html代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step2：写css代码"><span class="nav-number">3.2.</span> <span class="nav-text">step2：写css代码</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

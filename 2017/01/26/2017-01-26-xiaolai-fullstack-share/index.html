@@ -1,0 +1,655 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="今天看了笑来老师在第一期全栈班上的演讲，从中学到了一些新的东西，也复习了一些在得到专栏里面学到的知识。 人生三大坑凑热闹。大多数人都喜欢凑热闹，比如说现实生活中，在大街上经常会有人围观，但其实哪些事情跟他们一毛钱关系的没有，而且基本是全是坏事。比如说在网络上，一条某某明星出轨了之类的热点新闻，就可以引发无数人的关注，但其实，这些事情说白了就是：“关你屁事！”。 随大流。大家都在做，所以你也跟着做。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李笑来第一期全栈班演讲笔记">
+<meta property="og:url" content="http://yoursite.com/2017/01/26/2017-01-26-xiaolai-fullstack-share/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="今天看了笑来老师在第一期全栈班上的演讲，从中学到了一些新的东西，也复习了一些在得到专栏里面学到的知识。 人生三大坑凑热闹。大多数人都喜欢凑热闹，比如说现实生活中，在大街上经常会有人围观，但其实哪些事情跟他们一毛钱关系的没有，而且基本是全是坏事。比如说在网络上，一条某某明星出轨了之类的热点新闻，就可以引发无数人的关注，但其实，这些事情说白了就是：“关你屁事！”。 随大流。大家都在做，所以你也跟着做。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-01-26T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="李笑来第一期全栈班演讲笔记">
+<meta name="twitter:description" content="今天看了笑来老师在第一期全栈班上的演讲，从中学到了一些新的东西，也复习了一些在得到专栏里面学到的知识。 人生三大坑凑热闹。大多数人都喜欢凑热闹，比如说现实生活中，在大街上经常会有人围观，但其实哪些事情跟他们一毛钱关系的没有，而且基本是全是坏事。比如说在网络上，一条某某明星出轨了之类的热点新闻，就可以引发无数人的关注，但其实，这些事情说白了就是：“关你屁事！”。 随大流。大家都在做，所以你也跟着做。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/26/2017-01-26-xiaolai-fullstack-share/"/>
+
+  <title> 李笑来第一期全栈班演讲笔记 | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                李笑来第一期全栈班演讲笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-26T23:19:58+08:00" content="2017-01-26">
+              2017-01-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天看了笑来老师在第一期全栈班上的演讲，从中学到了一些新的东西，也复习了一些在得到专栏里面学到的知识。</p>
+<h2 id="人生三大坑"><a href="#人生三大坑" class="headerlink" title="人生三大坑"></a>人生三大坑</h2><p><strong>凑热闹</strong>。大多数人都喜欢凑热闹，比如说现实生活中，在大街上经常会有人围观，但其实哪些事情跟他们一毛钱关系的没有，而且基本是全是坏事。比如说在网络上，一条某某明星出轨了之类的热点新闻，就可以引发无数人的关注，但其实，这些事情说白了就是：“关你屁事！”。</p>
+<p><strong>随大流</strong>。大家都在做，所以你也跟着做。比如大家都在看热门新闻，你害怕不看新闻的话就跟他们没有共同话题，所以你也跟着看新闻。大家都在法定节假日休息，所以你也怎么做，但其实法定节假日这个东西，是国家用来规定企业的，而不是规定个人。你其实是可以选择去学习的，而不是跟着大众一起休息，不是吗？要是仔细算一下一年中节假日的总时长，然后在乘以10年，你就会惊讶的发现，原来只要把节假日利用起来，就可以比别人多出那么多的时间。只要方向正确，那么肯定可以比其他人更优秀，这不是很合理，很公平吗？</p>
+<p><strong>为别人操碎了心</strong>。网上的喷子们看到一个不符合自己价值观的东西，就会去抨击，自己的事情不好好处理，净想着操别人的心，真是浪费时间。</p>
+<h2 id="coding只占20"><a href="#coding只占20" class="headerlink" title="coding只占20%"></a>coding只占20%</h2><p>一个全栈工程师，要想做出一个好的产品，最重要的并不是敲代码的能力，而是拥有好的想法，那么，好的想法需要什么技能？独立思考能力。所以，全栈工程师是一个综合性很强的职业，是通过观察发现社会问题，然后用代码解决生活问题。没错，工程师的最终目的其实只有一个：就是来解决问题的。</p>
+<h2 id="注意力-时间-金钱"><a href="#注意力-时间-金钱" class="headerlink" title="注意力 > 时间 > 金钱"></a>注意力 > 时间 > 金钱</h2><p>人生最宝贵的东西是什么？你可能不会说是金钱，因为钱可以再生嘛。你更可能会说是时间。但其实并不是，最宝贵的东西其实是注意力。为什么这么说呢？</p>
+<p>每个人都只有24个小时，很多人都把注意力花在上面三个大坑里面，对于这些人而已，给再多的时间都是浪费，不是吗？</p>
+<p>把注意力放在一些和自己没半毛钱关系的花边新闻上，表面上看起来你是在消费新闻，但其实是你的注意力被媒体廉价地收割了。你的注意力只是变成了一个“阅读量”，最吃亏的其实是你自己。但大多数人好像都没有察觉这一点，似乎还沉浸其中，真是可怕！</p>
+<h2 id="什么是全栈工程师？"><a href="#什么是全栈工程师？" class="headerlink" title="什么是全栈工程师？"></a>什么是全栈工程师？</h2><p>全栈工程师不是十八般武艺，样样精通，而是掌握了一些最少的必要的知识，然后用这些技能来实现自己的想法，至于精通，那是十几年以后的事情了。</p>
+<p>掌握必要的编程知识，并且能用来解决问题，这就是一名全栈工程师。在用的过程中，不断地补充其他的知识，根据知识的复利效应，早晚有一天，你就能学地很好的。不单单学编程是如此，学习其他的东西也都是这样的。</p>
+<h2 id="一切的学习都是社交活动"><a href="#一切的学习都是社交活动" class="headerlink" title="一切的学习都是社交活动"></a>一切的学习都是社交活动</h2><p>首先，假如你进入一个社群，里面的大多数人都很努力，那么你也会不自觉地跟着努力，因为心理学里面有一个“镜像神经元”，如果有人在我们面前表现得很好，而我们就希望和他做的一样。</p>
+<p>其次，把别人教会，帮别人改错，是最高效的学习方法。向别人讲述知识，表面上看起来你有点吃亏，因为你把时间花在了别人身上，但其实这对于你自己而言，帮助是巨大的。这确实是有点反常识，但这里面其实有个叫做“提取练习”的概念。意思是你主动地从大脑里面搜索知识，搜索的次数越频繁，你就记得越牢固。知道了这个科学原理，我们就很容易明白为什么说“教，是最好的学”。</p>
+<p>比如，在编程时，别人犯了一个错误，解决不了，然后来找你帮忙，你帮他解决了，那么，你就多了一份经验，因为你以后就不用自己去踩这个坑了。这就跟吸星大法一样，把别人的经验都吸收过来，这比一个人闭门造车不知道要高效到哪里去了，不是吗？</p>
+<h2 id="金句"><a href="#金句" class="headerlink" title="金句"></a>金句</h2><ul>
+<li>用业余时间研究编程语言的历史，能帮助你了解很多东西。</li>
+<li>人生三大坑：莫名其妙的凑热闹，火急火燎的随大流，操碎别人的心。</li>
+<li>在中国，英语能力是程序员的天花板。</li>
+<li>一切的学习都是社交活动。</li>
+<li>编程语言用3个东西解决所有问题：顺序，分支，循环。</li>
+<li>真正的有效沟通是：我能让你理解你之前并不理解的东西，让你了解你之前并不了解的真相。</li>
+<li>该自卑时就要自卑，这样心理才健康。</li>
+</ul>
+<h2 id="行动"><a href="#行动" class="headerlink" title="行动"></a>行动</h2><p>听了一大堆道理，最关键的一步是要整理出一系列“最小行动”，然后开始践行，不然就会真的成为那种“听了很多道理，却依然过不好这一生”的人。</p>
+<ul>
+<li>时刻警惕自己，切勿掉进人生三大坑。</li>
+<li>先学习最少必要知识，管它三七二十一，先用上再说。</li>
+<li>把注意力放在自身的成长上。</li>
+<li>技术文档只读英文的。</li>
+<li>交流，交流，再交流！</li>
+<li>用业余时间研究一下编程历史。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/26/2017-01-26-custom-form-error-tip/" rel="next" title="【教程】自定义表单报错信息 + 限制薪水下限不能低于薪水上限">
+                <i class="fa fa-chevron-left"></i> 【教程】自定义表单报错信息 + 限制薪水下限不能低于薪水上限
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/30/2017-01-30-align-center-middle/" rel="prev" title="布局解决方案之「居中布局」">
+                布局解决方案之「居中布局」 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#人生三大坑"><span class="nav-number">1.</span> <span class="nav-text">人生三大坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#coding只占20"><span class="nav-number">2.</span> <span class="nav-text">coding只占20%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意力-时间-金钱"><span class="nav-number">3.</span> <span class="nav-text">注意力 &gt; 时间 &gt; 金钱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是全栈工程师？"><span class="nav-number">4.</span> <span class="nav-text">什么是全栈工程师？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一切的学习都是社交活动"><span class="nav-number">5.</span> <span class="nav-text">一切的学习都是社交活动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金句"><span class="nav-number">6.</span> <span class="nav-text">金句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行动"><span class="nav-number">7.</span> <span class="nav-text">行动</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

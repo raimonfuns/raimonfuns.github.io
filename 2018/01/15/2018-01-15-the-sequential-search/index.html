@@ -1,0 +1,698 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="当一堆数据存放在一个列表（list）里面，每个数据都有一个位置（position），而且这个位置是有顺序的，比如说 list[2]，就表示我们要访问位置为2，也就是数组的第3个数据。当我们在这样一个有顺序的列表中，查找某一个数据时，这个过程我们称为「顺序查找」。顺序查找最重要的东西是什么？就是位置，我们也称为下标。 看下面这个列表：  当我们要在这个列表中找一个数据时，是从左到右依次查询，当把所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="顺序查找（The sequential search）">
+<meta property="og:url" content="http://yoursite.com/2018/01/15/2018-01-15-the-sequential-search/index.html">
+<meta property="og:site_name" content="Being and Doing">
+<meta property="og:description" content="当一堆数据存放在一个列表（list）里面，每个数据都有一个位置（position），而且这个位置是有顺序的，比如说 list[2]，就表示我们要访问位置为2，也就是数组的第3个数据。当我们在这样一个有顺序的列表中，查找某一个数据时，这个过程我们称为「顺序查找」。顺序查找最重要的东西是什么？就是位置，我们也称为下标。 看下面这个列表：  当我们要在这个列表中找一个数据时，是从左到右依次查询，当把所有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fnhmshd56nj30bs02iq2v.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fnhnuqpemrj30c902iq2v.jpg">
+<meta property="og:updated_time" content="2018-01-15T15:19:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="顺序查找（The sequential search）">
+<meta name="twitter:description" content="当一堆数据存放在一个列表（list）里面，每个数据都有一个位置（position），而且这个位置是有顺序的，比如说 list[2]，就表示我们要访问位置为2，也就是数组的第3个数据。当我们在这样一个有顺序的列表中，查找某一个数据时，这个过程我们称为「顺序查找」。顺序查找最重要的东西是什么？就是位置，我们也称为下标。 看下面这个列表：  当我们要在这个列表中找一个数据时，是从左到右依次查询，当把所有">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fnhmshd56nj30bs02iq2v.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/15/2018-01-15-the-sequential-search/"/>
+
+  <title> 顺序查找（The sequential search） | Being and Doing </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5a52bbf51ff63e06bda0b7de1e08d341";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Being and Doing</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                顺序查找（The sequential search）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-01-15T23:19:58+08:00" content="2018-01-15">
+              2018-01-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithms/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithms</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>当一堆数据存放在一个列表（list）里面，每个数据都有一个位置（position），而且这个位置是有顺序的，比如说 <code>list[2]</code>，就表示我们要访问位置为2，也就是数组的第3个数据。当我们在这样一个有顺序的列表中，查找某一个数据时，这个过程我们称为「顺序查找」。顺序查找最重要的东西是什么？就是位置，我们也称为下标。</p>
+<p>看下面这个列表：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fnhmshd56nj30bs02iq2v.jpg" alt=""></p>
+<p>当我们要在这个列表中找一个数据时，是从左到右依次查询，当把所有位置的数据都查找一边之后，如果最终还是没找到想要的数据，那就可以断定，这个数据不在这个列表中。</p>
+<p>下面，我们用python，实现一个顺序查找的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sequentialSearch</span><span class="params">(alist, item)</span>:</span></span><br><span class="line">  pos = <span class="number">0</span></span><br><span class="line">  found = <span class="keyword">False</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> pos &lt; len(alist) <span class="keyword">and</span> <span class="keyword">not</span> found</span><br><span class="line">  	<span class="keyword">if</span> alist[post] == item</span><br><span class="line">    	found = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	pos = pos + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> found</span><br><span class="line"></span><br><span class="line">testlist = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">32</span>, <span class="number">8</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">42</span>, <span class="number">13</span>, <span class="number">0</span>]</span><br><span class="line">print(sequentialSearch(testlist, <span class="number">3</span>)) // <span class="keyword">False</span></span><br><span class="line">print(sequentialSearch(testlist, <span class="number">13</span>)) // <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="分析顺序查找的效率"><a href="#分析顺序查找的效率" class="headerlink" title="分析顺序查找的效率"></a>分析顺序查找的效率</h2><p>我们先来思考一个问题 — 如何分析一个算法的好坏呢？首先，我们应该找出一个最小单元，然后根据这个最小单元的执行次数，来间接地推断出一个算法的效率。对于顺序查找，最小单元就是<strong>比较</strong>「你要找的数据」和「当前位置的数据」是不是相等的这个操作。换句话说，分析一个顺序查找算法的效率，就是分析「比较次数」的多少。如果「要查找的数据」在列表，那么，我们需要比较的次数，刚好就等于这个数据在列表的位置。</p>
+<p>通常来时，分析一个算法，可以从三种情况入手：<code>Best Case</code>, <code>Worst Case</code> 和 <code>Average Case</code>。</p>
+<p>Best Case。当「要查找的数据」刚好位于列表的第一个，那就是最好的情况了，只比较了1次就结束了。</p>
+<p>Worst Case，当「要查找的数据」不在列表中，那就是最糟糕的情况，比较次数就是列表数据的个数。</p>
+<p>Average Case，当「要查找的数据」刚刚好在列表的中间，那就是平均的（或者说是普通的、平常的）情况。比较次数是 <code>n/2</code>，一般来说，我们是通过Average Case，来推断一个算法的复杂度。你可能会说，那这个算法的复杂度就是O(n/2)，但正确的结果是O(n)。因为，当n越来越大的时候，这个系数（1/2），对于整个过程的性能而言，可以忽略不计，最终我们能得到的近似值就是n，所以，我们称它的算法复杂的为O(n)。为了更好地解释这个，我再举两个例子：</p>
+<p>假设一个算法，用函数来表示是 <code>T(n) = n + 1</code>，当n很小的时候，1的是不可以忽略的。当n变大，而且变得超大的时候，n就可以忽略不计的，我们可以这么认为：在一个大数量级的情况下，这个累加算法的近似值为 <code>T(n) = n</code>，我们把它表示为O(n)。</p>
+<p>假如一个算法用函数来表示为：<code>T(n)=5n^2+27n+1005</code>，当n变大，而且变得很大的数量级之后，<code>5n2</code> 会超级大，所以27n和1005可以忽略不计。还有一点值得注意的是，如果n变成很大的数量级，其实 <code>5n^2</code> 中的5也可以忽略不计。你可能会说，那么可能忽略不计啊，一个超级大的数据，乘5和不乘5，对结果影响的很大的。是的，这个说法并没有错误，这是从结果的角度来分析。但是，<strong>评价算法的优劣并不关注结果，而是这个过程所消耗的资源</strong>。也就是，当n超级大的时候，n2已经非常复杂了，复杂到可以忽略 <code>5 x n^2</code> 的计算的过程。所以，它的算法近似值为Q(n^2)。</p>
+<p>所以，你现在就应该能明白，为什么 <code>T(n) = n/2</code> 的算法复杂度是O(n)了吧？希望我举的例子能帮助到你的理解。</p>
+<p>好，整理一下，我们得到下面这张表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Case</th>
+<th style="text-align:center">Best Case</th>
+<th style="text-align:center">Worst Case</th>
+<th style="text-align:center">Average Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据在列表中</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">n</td>
+<td style="text-align:center">n/2</td>
+</tr>
+<tr>
+<td style="text-align:center">数据不在列表中</td>
+<td style="text-align:center">n</td>
+<td style="text-align:center">n</td>
+<td style="text-align:center">n</td>
+</tr>
+</tbody>
+</table>
+<p>我们上面讨论的列表，都是无序列表，那如果是有序列表，查找元素的时候，会不会更快呢？</p>
+<p>假设我们有一个列表，里面的数据是以上升顺序（ascending order）来排序的，也就是从低到高。当「要查找的数据」在列表中，所需要的查找次数和无需列表一样，都是等于这个数据在列表的位置。然而，当「要查找的数据」不在列表中，那就有不一样了。举个例子：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fnhnuqpemrj30c902iq2v.jpg" alt=""></p>
+<p>假设当我们要找到数据是50，当我们一步一步查找到54的时候，发现，咦，因为我们当前这个列表是有序的，现在我比较的数据是54，而54显然已经大于50，那么，我们没有必要继续往下查询了，直接可以下结论：50不在这个列表中。</p>
+<p>下面，我们用python，实现一个有序列表的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">orderedSequentialSearch</span><span class="params">(alist, item)</span>:</span></span><br><span class="line">    pos = <span class="number">0</span></span><br><span class="line">    found = <span class="keyword">False</span></span><br><span class="line">    stop = <span class="keyword">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> pos &lt; len(alist) <span class="keyword">and</span> <span class="keyword">not</span> found <span class="keyword">and</span> <span class="keyword">not</span> stop</span><br><span class="line">    	<span class="keyword">if</span> alist[pos] == item</span><br><span class="line">        	found = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        	<span class="keyword">if</span> alist[pos] &gt; item</span><br><span class="line">            	stop = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            	pos = pos + <span class="number">1</span></span><br><span class="line">         </span><br><span class="line">    <span class="keyword">return</span> found</span><br><span class="line"></span><br><span class="line">testlist = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">32</span>, <span class="number">42</span>,]</span><br><span class="line">print(orderedSequentialSearch(testlist, <span class="number">3</span>)) // <span class="keyword">False</span></span><br><span class="line">print(orderedSequentialSearch(testlist, <span class="number">13</span>)) // <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p>同样，我们分析得出三种Case的结果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Case</th>
+<th style="text-align:center">Best Case</th>
+<th style="text-align:center">Worst Case</th>
+<th style="text-align:center">Average Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据在列表中</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">n</td>
+<td style="text-align:center">n/2</td>
+</tr>
+<tr>
+<td style="text-align:center">数据不在列表中</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">n</td>
+<td style="text-align:center">n/2</td>
+</tr>
+</tbody>
+</table>
+<p>然而，这个算法是复杂度依旧是O(n)。也就是说，只有当数据不在一个有序列表中的时候，顺序查询的效率才会得到提高。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/23/2017-07-23-shaobing/" rel="next" title="阅读别人的代码">
+                <i class="fa fa-chevron-left"></i> 阅读别人的代码
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/16/2018-01-16-the-binary-search/" rel="prev" title="二分查找（The Binary Search）">
+                二分查找（The Binary Search） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://p2mvd0t5x.bkt.clouddn.com/2018-01-16-avatar.jpeg"
+               alt="陈俊鸿" />
+          <p class="site-author-name" itemprop="name">陈俊鸿</p>
+          <p class="site-description motion-element" itemprop="description">终生学习者<br>Passion and Persistence</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">108</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/raimonfuns" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5224061111" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析顺序查找的效率"><span class="nav-number">1.</span> <span class="nav-text">分析顺序查找的效率</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈俊鸿</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
